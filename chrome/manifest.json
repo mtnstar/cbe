@@ -1,17 +1,26 @@
 {
-  "name": "Cbe",
-  "description": "Small description for cbe goes here",
-  "version": "0.0.0",
-  "manifest_version": 2,
-  "app": {
-    "background": {
-      "scripts": [
-        "background.js"
-      ]
-    }
+  "manifest_version" : 2,
+  "name": "Cryptopus Browser Extension",
+  "version": "0.0.1",
+  "description": "...",
+
+  "browser_action": {
+    "default_icon": {
+      "16": "assets/images/crypticon_48.png"
+    },
+    "default_title": "Cryptopus Browser Extension",
+    "default_popup": "popup.html"
   },
-  "icons": {
-    "16": "cbe-16.png",
-    "128": "cbe-128.png"
-  }
+
+  "content_scripts": [
+    {
+      "matches": ["http://localhost/*"],
+      "css": ["assets/cbe.css"],
+      "js": [
+        "assets/cbe.js",
+        "content-script.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
 }

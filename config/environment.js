@@ -47,5 +47,16 @@ module.exports = function(environment) {
     // here you can enable a production-specific feature
   }
 
+  // `ember-cli-post-build-copy` configuration needed to copy files from `/dist/`
+  // to the chrome folder
+  ENV['ember-cli-post-build-copy'] = {
+    replace: true,
+    development: [
+      ['/assets/cbe.js', 'chrome/assets/cbe.js'],
+      ['/assets/cbe.css', 'chrome/assets/cbe.css'],
+      ['/assets/images', 'chrome/assets/images']
+    ]
+  };
+
   return ENV;
 };
