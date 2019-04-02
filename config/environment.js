@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'cbe',
     environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -40,7 +40,6 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
-    ENV.APP.autoboot = false;
   }
 
   if (environment === 'production') {
@@ -52,11 +51,15 @@ module.exports = function(environment) {
   ENV['ember-cli-post-build-copy'] = {
     replace: true,
     development: [
+      ['/assets/vendor.js', 'chrome/assets/vendor.js'],
+      ['/assets/vendor.css', 'chrome/assets/vendor.css'],
       ['/assets/cbe.js', 'chrome/assets/cbe.js'],
       ['/assets/cbe.css', 'chrome/assets/cbe.css'],
       ['/assets/images', 'chrome/assets/images']
     ]
   };
+
+  ENV.APP.autoboot = false;
 
   return ENV;
 };

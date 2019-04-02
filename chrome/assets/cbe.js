@@ -331,7 +331,7 @@
 ;define('cbe/config/environment', [], function() {
   
           var exports = {
-            'default': {"modulePrefix":"cbe","environment":"development","rootURL":"/","locationType":"auto","EmberENV":{"FEATURES":{},"EXTEND_PROTOTYPES":{"Date":false}},"APP":{"name":"cbe","version":"0.0.0+f9cef2f4"},"ember-cli-post-build-copy":{"replace":true,"development":[["/assets/cbe.js","chrome/assets/cbe.js"],["/assets/cbe.css","chrome/assets/cbe.css"],["/assets/images","chrome/assets/images"]]},"exportApplicationGlobal":true}
+            'default': {"modulePrefix":"cbe","environment":"development","rootURL":"/","locationType":"hash","EmberENV":{"FEATURES":{},"EXTEND_PROTOTYPES":{"Date":false}},"APP":{"autoboot":false,"name":"cbe","version":"0.0.0+b7126f67"},"ember-cli-post-build-copy":{"replace":true,"development":[["/assets/vendor.js","chrome/assets/vendor.js"],["/assets/vendor.css","chrome/assets/vendor.css"],["/assets/cbe.js","chrome/assets/cbe.js"],["/assets/cbe.css","chrome/assets/cbe.css"],["/assets/images","chrome/assets/images"]]},"exportApplicationGlobal":true}
           };
           Object.defineProperty(exports, '__esModule', {value: true});
           return exports;
@@ -340,7 +340,7 @@
 
 ;
           if (!runningTests) {
-            require("cbe/app")["default"].create({"name":"cbe","version":"0.0.0+f9cef2f4"});
+            require("cbe/app")["default"].create({"autoboot":false,"name":"cbe","version":"0.0.0+b7126f67"});
           }
         
 //# sourceMappingURL=cbe.map

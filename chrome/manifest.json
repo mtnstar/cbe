@@ -3,7 +3,7 @@
   "name": "Cryptopus Browser Extension",
   "version": "0.0.1",
   "description": "...",
-
+  "content_security_policy": "default-src 'self' 'sha256-yeAmRpJIr7H4ILHJd5Nmoc+pTZLmNurqlITnePAVJz8='; style-src 'self' 'sha256-t3OIshwxKHm4xfEPdmkoaPgosjIuancF7jF57N6b3c8='",
   "browser_action": {
     "default_icon": {
       "16": "assets/images/crypticon_48.png"
@@ -15,12 +15,14 @@
   "content_scripts": [
     {
       "matches": ["http://localhost/*"],
-      "css": ["assets/cbe.css"],
+      "css": ["assets/vendor.css", "assets/cbe.css"],
       "js": [
+        "assets/vendor.js",
         "assets/cbe.js",
         "content-script.js"
       ],
       "run_at": "document_idle"
     }
-  ]
+  ],
+  "permissions": [ "storage" ]
 }

@@ -7,13 +7,7 @@ module.exports = function(defaults) {
     fingerprint: {
       exclude: ['app']
     },
-    storeConfigInMeta: false,
-    js: {
-      concat: true
-    },
-    css: {
-      concat: true
-    }
+    storeConfigInMeta: false
   });
 
   // Use `app.import` to add additional libraries to the generated

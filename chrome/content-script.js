@@ -15,7 +15,7 @@ class ContentScript {
   //...
   
   startEmberApp() {
-    require('chrome-extension/app')['default'].create({ rootElement: '#my-selector' });
+    require('cbe/app')['default'].create({ rootElement: '#chrome-app' });
   }
 }
 
