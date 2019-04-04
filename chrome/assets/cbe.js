@@ -46,7 +46,8 @@
 
       let metaScope = document.querySelector("meta[scope='ember-app-from']");
       let scope = metaScope ? metaScope.getAttribute('content') : 'content-script';
-      this.set(this, 'appScope', scope);
+      console.log('scope is: ...', scope);
+      this.set('appScope', scope);
     }
 
   });
@@ -291,8 +292,22 @@
     location: _environment.default.locationType,
     rootURL: _environment.default.rootURL
   });
-  Router.map(function () {});
+  Router.map(function () {
+    this.route('popup');
+  });
   var _default = Router;
+  _exports.default = _default;
+});
+;define("cbe/routes/popup", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.Route.extend({});
+
   _exports.default = _default;
 });
 ;define("cbe/services/ajax", ["exports", "ember-ajax/services/ajax"], function (_exports, _ajax) {
@@ -326,12 +341,30 @@
 
   _exports.default = _default;
 });
+;define("cbe/templates/popup", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.HTMLBars.template({
+    "id": "SzKyYmx0",
+    "block": "{\"symbols\":[],\"statements\":[[1,[21,\"outlet\"],false]],\"hasEval\":false}",
+    "meta": {
+      "moduleName": "cbe/templates/popup.hbs"
+    }
+  });
+
+  _exports.default = _default;
+});
 ;
 
 ;define('cbe/config/environment', [], function() {
   
           var exports = {
-            'default': {"modulePrefix":"cbe","environment":"development","rootURL":"/","locationType":"hash","EmberENV":{"FEATURES":{},"EXTEND_PROTOTYPES":{"Date":false}},"APP":{"autoboot":false,"name":"cbe","version":"0.0.0+b7126f67"},"ember-cli-post-build-copy":{"replace":true,"development":[["/assets/vendor.js","chrome/assets/vendor.js"],["/assets/vendor.css","chrome/assets/vendor.css"],["/assets/cbe.js","chrome/assets/cbe.js"],["/assets/cbe.css","chrome/assets/cbe.css"],["/assets/images","chrome/assets/images"]]},"exportApplicationGlobal":true}
+            'default': {"modulePrefix":"cbe","environment":"development","rootURL":"/","locationType":"hash","EmberENV":{"FEATURES":{},"EXTEND_PROTOTYPES":{"Date":false}},"APP":{"autoboot":false,"name":"cbe","version":"0.0.0+94b2c431"},"ember-cli-post-build-copy":{"replace":true,"development":[["/assets/vendor.js","chrome/assets/vendor.js"],["/assets/vendor.css","chrome/assets/vendor.css"],["/assets/cbe.js","chrome/assets/cbe.js"],["/assets/cbe.css","chrome/assets/cbe.css"],["/assets/images","chrome/assets/images"]]},"exportApplicationGlobal":true}
           };
           Object.defineProperty(exports, '__esModule', {value: true});
           return exports;
@@ -340,7 +373,7 @@
 
 ;
           if (!runningTests) {
-            require("cbe/app")["default"].create({"autoboot":false,"name":"cbe","version":"0.0.0+b7126f67"});
+            require("cbe/app")["default"].create({"autoboot":false,"name":"cbe","version":"0.0.0+94b2c431"});
           }
         
 //# sourceMappingURL=cbe.map
